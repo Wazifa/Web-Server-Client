@@ -21,10 +21,9 @@ public class WebServer {
         while (true) {
             // Listen for a TCP connection request.
             Socket connectionSocket =  WebSocket.accept();
-//        
-//            //Construct object to process HTTP request message
-//            HttpRequest request = new HttpRequest(connectionSocket);
-//      
+
+            
+//            //Process HTTP request message
             Thread thread = new Thread(new HttpRequest(connectionSocket));
             thread.start(); 
      }
